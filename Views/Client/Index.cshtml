@@ -1,0 +1,21 @@
+﻿
+
+@using Newtonsoft.Json
+
+<h1>View Bag Demo</h1>
+
+@* Display Simple View Bag Data *@
+<h2>@ViewBag.FirstName</h2>
+<h2>@ViewBag.LastName</h2>
+
+@* Display Complex View Bag Data COnvert Again Json to Object *@
+@{
+
+    var clientModelObj = JsonConvert.DeserializeObject<dynamic>(ViewBag.ClientModel);
+}
+
+<div>
+    <h4>First Name : @clientModelObj.FirstName</h4>
+    <h4>Last Name : @clientModelObj.LastName</h4>
+</div>
+
